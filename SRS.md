@@ -8,7 +8,7 @@ Fill the document out following the guidelines listed in each section. Maintain 
 
 * [Name](mailto:email@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
-* [Name](mmailto:email@uncc.edu)
+* [Mack Larson](mailto:clarson9@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
 
 ## Revisions
@@ -18,7 +18,7 @@ When a change is made to the document, a new revision should be created. The rev
 | Version | Date | Description | Author | Reviewed By |
 | --- | --- | --- | --- | --- |
 | 1.0 | 03/22/23 | Initial draft | [David Gary](mailto:dgary9@uncc.edu) | [David Gary](mailto:dgary@uncc.edu) |
-
+|1.0| 03/30/23 | Initial Document | [Mack Larson](mailto:clarson9@uncc.edu) | [Mack Larson](mailto:clarson9@uncc.edu) |
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -48,11 +48,30 @@ Each group member must supply at least three functional requirements for the pro
   * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
   * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
   * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
-
+* **Req-7:** Video game Object
+  * **Description:** A Video game Object that stores a Price, a inventory size, A image, and the name of the Video game
+  * **Type:** Functional
+  * **Priority:** 3
+  * **Rationale:** This requirement stores inventory, as well as the display capabilities and prices
+  * **Testing:** We would write tests to check price, inventory, and images.  
+* **Req-8:** Checkout
+  * **Description:** A Checkout process where a person can buy the items in their shopping cart
+  * **Type:** Functional
+  * **Priority:** 1
+  * **Rationale:** The people need to be able to buy whatever they want to get from the stole
+  * **Testing:** We would write tests to check that inventory decreases, the customer gets their card charged, and the shopping cart gets emptied
+* **Req-9:** Error Messages
+  * **Description:** Clear and consise error messages to tell the client what they did wrong
+  * **Type:** Functional
+  * **Priority:** 5
+  * **Rationale:** These error messages would help the client know what they should do right.
+  * **Testing:** We would write tests to check error messages are thrown when someone enters something we dont want into a field  
 ## Constraints
 
 In this section, you should list any constraints that you have for the project. Each group member must supply at least two constraints. These can be constraints on the project itself, the software system, or the stakeholders. Constraints can be anything that limits the scope of the project. For example, that this project's template code is written using Flask and Python constitutes a constraint on the backend of the project. Constraints can also be things like the required timeline of the project. Be creative.
 
+- Real: We are constraned by real-world applications 
+- Video games: We are constraned to only selling video game objects because this is a video game store
 ## Use Cases
 
 In this section, you should list use cases for the project. Use cases are a thorough description of how the system will be used. Each group member must supply at least two use cases. Each use case should be written in the following format:
@@ -62,6 +81,16 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Actors:** A list of the actors that are involved in the use case. Only include the actors that are directly involved. Actors are the people or things that interact with the system. For example, when ordering at a fast food restaurant, one might have the following actors: the customer, the cashier, and the cook. But only the customer and the cashier are directly involved in the use case of ordering food. The cook is not directly involved in the use case of ordering food.
   * **Preconditions:** A list of the preconditions for the use case. This should be a list of the preconditions for the use case, which are the conditions that must be met before the use case can be executed. Continuing with the restaurant example, the customer must have money in their wallet and the cashier must be logged in to the system before the use case of ordering food can be executed.
   * **Postconditions:** A list of the postconditions for the use case. This should be a list of the postconditions for the use case, which are the conditions that must be met after the use case has been executed. Continuing with the restaurant example, the customer must have their food and the cashier must have the customer's money after the use case of ordering food has been executed.
+* **UC-5:** Checkout
+  * **Description:** A person should be able to use the checkout process to buy the items in their cart
+  * **Actors:** Customer
+  * **Preconditions:** Shopping cart isn't empty, they have a valid card, and the items they want arent out of stock
+  * **Postconditions** Shopping cart gets emptied, card gets charged, inventory gets decreased. 
+* **UC-6:** Add video game object
+  * **Description:** The ability to add a new video game product to the store
+  * **Actors:** Admin
+  * **Preconditions:** More then zero of the item you're trying to add, and the information for the fields
+  * **Postconditions** A new item added to the store, along with description, price, and name. 
 
 ## User Stories
 
@@ -70,6 +99,13 @@ In this section, you should list user stories for the project. User stories are 
 * **ID:** A unique identifier for the user story. This should be a number that is unique across the entire document (something like US-1, US-2, etc. but be sure to replace the word `ID` with the unique identifier).
   * **Type of User:** The type of user that the user story is for. This should be a single word that describes the type of user. For example, a user story for a customer might be `Customer` and a user story for an administrator might be `Admin`.
   * **Description:** A description of the user story that gives a narrative from that user's perspective. This can be any length, but it must paint the picture of what the user wants to do, how they intend to do it, why they want to, and what they expect to happen.
+* **US-5:** Checking Out of Store
+  * **Type of User:** Customer
+  * **Description:** I want to be able to go ahead and buy whatever is in my shopping cart once im done browsing
+* **US-6:** Adding new inventory to the store
+  * **Type of User:** Admin
+  * **Description:** I would like to be able to add new types of product to my store
+
 
 ## Glossary
 
@@ -77,3 +113,6 @@ In this section, you should list any terms that are used in the document that ma
 
 * **Term:** The term that is being defined. This should be a single word or phrase that is being defined.
   * **Definition:** A definition of the term. This should be a short description of the term that is being defined. This should be a single sentence that describes the term.
+
+* **Term:** Attribute
+  * **Definition:** A field that contains info, mainly used in objects. 
