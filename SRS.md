@@ -28,8 +28,6 @@ When a change is made to the document, a new revision should be created. The rev
 
 ## Introduction
 
-In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section.
-
 Our project is a videogame store where users will be able to shop through a listed inventory that states the quanity and price of available videogames. The customer will able to view the quantity and price of all items available and will be able to shop for multiple items at a time. When the inventory of an item hits 0, staff of the store will be able to remove the object from inventory. Customers will be able to checkout using their card information. 
 
 ## Requirements
