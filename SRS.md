@@ -4,6 +4,7 @@
 
 * [Winnie Kubuanu](mailto:ekubuanu@uncc.edu)
 * [Mack Larson](mailto:clarson9@uncc.edu)
+* [Zachary Turnmire](mailto:zturnmir.uncc.edu)
 
 ## Revisions
 
@@ -12,9 +13,9 @@ When a change is made to the document, a new revision should be created. The rev
 | Version | Date | Description | Author | Reviewed By |
 | --- | --- | --- | --- | --- |
 | 1.0 | 03/22/23 | Initial draft | [David Gary](mailto:dgary9@uncc.edu) | [David Gary](mailto:dgary@uncc.edu) |
-|1.0| 03/30/23 | Initial Document | [Mack Larson](mailto:clarson9@uncc.edu) | [Mack Larson](mailto:clarson9@uncc.edu) |
-| 1.0 | 03/22/23 | Initial draft | [Winnie Kubuanu](ekubuanu@uncc.edu) | [Winnie Kubuanu](ekubuanu@uncc.edu) |
-
+|1.0| 03/30/23 | Initial draft | [Mack Larson](mailto:clarson9@uncc.edu) | [Mack Larson](mailto:clarson9@uncc.edu) |
+| 1.0 | 03/22/23 | Initial draft | [Winnie Kubuanu](mailto:ekubuanu@uncc.edu) | [Winnie Kubuanu](mailto:ekubuanu@uncc.edu) |
+| 1.0 | 03/30/23 | Initial draft | [Zachary Turnmire](mailto:zturnmir.uncc.edu) | [Zachary Turnmire](mailto:zturnmir.uncc.edu) |
 
 ## Table of Contents
 
@@ -28,6 +29,8 @@ When a change is made to the document, a new revision should be created. The rev
 ## Introduction
 
 In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section.
+
+Our project is a videogame store where users will be able to shop through a listed inventory that states the quanity and price of available videogames. The customer will able to view the quantity and price of all items available and will be able to shop for multiple items at a time. When the inventory of an item hits 0, staff of the store will be able to remove the object from inventory. Customers will be able to checkout using their card information. 
 
 ## Requirements
 
@@ -74,28 +77,54 @@ In this section, you should give a brief overview of what your project will be. 
   * **Rationale:** Content that is simple to read and understand has a higher chance of generating user engagement. Users may become annoyed and leave the website if the material is unclear, hard to understand, or full of jargon, which can have an effect on engagement and conversions.
   * **Testing:** We may test this by asking a group of visitors to read the website's content and offer feedback on the text's clarity and readability.
 
+* **REQ-1:** Inventory
+  * **Description:** A list containing all items sold in the store.
+  * **Type:** Functional
+  * **Priority:** 1
+  * **Rationale:** Inventory is important to be able to track what games are currently sold in the shop. 
+  * **Testing:** Checks if the list is empty.
+
+* **REQ-2:** Price
+  * **Description:** The price of a videogame in the store. 
+  * **Type:** Functional
+  * **Priority:** 3
+  * **Rationale:** Price is used in the checkout feature.
+  * **Testing:** Checks if Price exists.
+  
+* **REQ-3** Quantity
+  * **Description:** Stores the current quantity of a specific videogame's quanity and check if it needs removed from list.
+  * **Type:** Functional
+  * **Priority:** 3
+  * **Rationale:** Check to see if an item needs to be removed from list.
+  * **Testing:** Checks to see if inventory is less than zero.
+
 ## Constraints
 
-Project Requirements: The website must be aesthetically pleasing  which can be difficult when there are few design resources available.
+ * **Project Requirements:** The website must be aesthetically pleasing  which can be difficult when there are few design resources available.
 
-Language Constraint: For this project we are limited to using Python and Flask.
+ * **Language Constraint:** For this project we are limited to using Python and Flask.
 
-Real: We are constraned by real-world applications 
+ * **Real:** We are constraned by real-world applications 
 
-Video games: We are constraned to only selling video game objects because this is a video game store
+ * **Video games:** We are constraned to only selling video game objects because this is a video game store
+
+ * **Time:** Our project is limited by time due to the School Semester.
+
+ * **Experience:** Most members are using Python for the first Semester, so we are limited by our experience in Python.
+
 ## Use Cases
 
-* **UC-3:** 
+* **UC-3:** Checkout
   * **Description:** The user can start the checkout procedure, which entails providing their billing and shipping information, choosing a payment option, and reviewing their order specifics before completing the transaction.
   * **Actors:** The customer
   * **Preconditions:** The user has added an item to their cart, entered their shipping and billing information, their payment method, and submitted their payment.
   * **Postconditions:** In an online web store, processing the customer's shipping label and sending the order to the shipping carrier are among the postconditions of the checkout use case. The store may also create an order confirmation page and send the user an email of confirmation, update its inventory system, or update its inventory system. 
 
-* **UC-5:** Checkout
-  * **Description:** A person should be able to use the checkout process to buy the items in their cart
+* **UC-5:** BuyBack
+  * **Description:** A person should be able to return the games back to the store
   * **Actors:** Customer
-  * **Preconditions:** Shopping cart isn't empty, they have a valid card, and the items they want arent out of stock
-  * **Postconditions** Shopping cart gets emptied, card gets charged, inventory gets decreased. 
+  * **Preconditions:** Bought a game before, game is still on store
+  * **Postconditions** game inventory is moved up one, and person recieves money on card used to purchase
 
 * **UC-6:** Add video game object
   * **Description:** The ability to add a new video game product to the store
@@ -109,6 +138,19 @@ Video games: We are constraned to only selling video game objects because this i
   * **Preconditions:** The user has added an item to their cart, entered their shipping and billing information, their payment method, and submitted their payment.
   * **Postconditions:** The postconditions of the "search and browse products" use case would be the user being shown a list of products based on their search query. 
 
+* **UC-1:** InventoryList
+  * **Description:** A function to output the current inventory in the store.
+  * **Actors:** Management of the store, and customers.
+  * **Preconditions:** The Inventory list must have items in it.
+  * **Postconditions:** Inventory must remove items with a quantity of 0.
+
+* **UC-2:** RemoveInventory
+  * **Description:** A function that removes a item from inventory.
+  * **Actors:** Management
+  * **Preconditions:** Inventory must contain an object. 
+  * **Postconditions:** Object should be properly removed.
+
+
 ## User Stories
 
 * **US-3:** Johnny
@@ -117,19 +159,31 @@ Video games: We are constraned to only selling video game objects because this i
 
 * **US-5:** Checking Out of Store
   * **Type of User:** Customer
-  * **Description:** I want to be able to go ahead and buy whatever is in my shopping cart once im done browsing
+  * **Description:** Kayla is shopping for video games on the online store. She wants to be able to buy the games she has gotten and experience it without errors
 
 * **US-6:** Adding new inventory to the store
   * **Type of User:** Admin
-  * **Description:** I would like to be able to add new types of product to my store
+  * **Description:** The Admin for the store would like to be able to add new video games whenever they come in, so people can start purchasing right away
 
 * **US-4:** Tomas
   * **Type of User:** `Customer`
   * **Description:** Tomas, a dedicated gamer, wants to browse the online store's assortment of video games fast and conveniently, view in-depth information on each game, and buy it. He anticipates a quick and easy checkout experience and intends to come back for additional purchases.
 
+* **US-1:** RemoveInventory
+  * **Type of User:** Admin
+  * **Description:** Admin can use the removeInventory function to find and remove all items that have 0 inventory. All items that are removed are outputted to the admin in case of any misintended deletions.
+* **US-2:** ShoppingCart
+  * **Type of User:** Customers
+  * **Description:** A customer can view each inventory item available and select items to add to their shopping cart. They can view their own shopping cart and the total price with tax.
+
+
 ## Glossary
 
 * **Term:** Attribute
-  * **Definition:** A field that contains info, mainly used in objects. 
+  * **Definition:** A field that contains info, mainly used in objects.
+  
 * **Term:** Function
   * **Definition:** A function is a website's ability to complete a particular task.
+
+* **Term:** List
+  * **Definition:** A list of objects that have their own unique attributes.
