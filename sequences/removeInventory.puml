@@ -1,0 +1,18 @@
+@startuml removeInventory
+actor Staff
+boundary "Inventory" as iSize
+control "Item" as item
+control "InventoryisnotEmpty" as iempty
+Staff -> iSize: Login
+activate iSize
+iSize -> iempty: login_pipeline(username, password)
+activate iempty
+iempty --> iSize: True
+deactivate iempty
+iSize -> item: add_new_session(username, db)
+activate item
+item --> iSize: None
+deactivate item
+iSize -> iSize: redirect to home page
+deactivate iSize
+@enduml

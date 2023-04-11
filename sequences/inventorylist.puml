@@ -1,0 +1,18 @@
+@startuml InventoryList
+actor Staff
+boundary "Inventory Size" as iSize
+control "Item" as item
+control "Description" as descc
+Staff -> iSize: Login
+activate iSize
+iSize -> desc: addDescription(price, quantity)
+activate desc
+desc --> iSize: True
+deactivate desc
+iSize -> item: add_new_item(desc)
+activate item
+item --> iSize: None
+deactivate item
+iSize -> iSize: redirect to home page
+deactivate iSize
+@enduml
