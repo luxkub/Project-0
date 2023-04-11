@@ -1,0 +1,18 @@
+@startuml Checkout
+actor Customer
+boundary "Register" as register
+control "Checkout" as checkout
+control "Payment" as pay
+Customer -> register: Checkout
+activate register
+register -> Payment: payment(cost, payment)
+activate pay
+pay --> Register: True
+deactivate pay
+register -> Checkout: add_new_checkout(cost, payment)
+activate checkout
+checkout --> register: None
+deactivate checkout
+register -> register: redirect to home page
+deactivate register
+@enduml

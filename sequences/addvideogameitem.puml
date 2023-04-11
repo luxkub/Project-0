@@ -1,0 +1,18 @@
+@startuml AddVideoGameObject
+actor Staff
+boundary "InventorySize" as iSize
+control "addItem" as addI
+control "Inventory" as Inventory
+Staff -> iSize: AddVideoGameObject
+activate isize
+iSize -> addI: addItem(cost, quantity)
+activate addI
+Inventory --> iSize: True
+deactivate Inventory
+iSize -> AddVideoGameObject: add_new_videogame(cost, quantity)
+activate addI
+addI --> iSize: None
+deactivate addI
+iSize -> iSize: redirect to home page
+deactivate iSize
+@enduml
