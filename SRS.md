@@ -136,13 +136,13 @@ Our project is a videogame store where users will be able to shop through a list
 
 * **UC-1:** InventoryList
   * **Description:** A function to output the current inventory in the store.
-  * **Actors:** Management of the store, and customers.
+  * **Actors:** Admin and customers.
   * **Preconditions:** The Inventory list must have items in it.
   * **Postconditions:** Inventory must remove items with a quantity of 0.
 
 * **UC-2:** RemoveInventory
   * **Description:** A function that removes a item from inventory.
-  * **Actors:** Management
+  * **Actors:** Admin
   * **Preconditions:** Inventory must contain an object. 
   * **Postconditions:** Object should be properly removed.
 
