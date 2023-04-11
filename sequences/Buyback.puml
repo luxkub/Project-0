@@ -1,0 +1,18 @@
+@startuml Buyback
+actor Customer
+boundary "Register" as register
+control "VideoGame" as game
+control "Payment" as pay
+Customer -> register: Buyback
+activate register
+register -> Payment: payment(credit, payment)
+activate pay
+game --> Register: True
+deactivate game
+register -> Buyback: add_new_game(credit, payment)
+activate videogame
+videogame --> register: None
+deactivate videogame
+register -> register: redirect to home page
+deactivate register
+@enduml

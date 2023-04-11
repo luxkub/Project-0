@@ -1,0 +1,18 @@
+@startuml moreInfo
+actor Customer
+boundary "noItem" as noItem
+control "VideoGame" as item
+control "Description" as desc
+Customer -> noItem: moreInfo
+activate noItem
+noItem -> desc: add_desc(desc, Inventory)
+activate desc
+desc --> noItem: True
+deactivate desc
+noItem -> item: add_new_item(item, desc)
+activate item
+item --> noItem: None
+deactivate item
+noItem -> noItem: redirect to home page
+deactivate noItem
+@enduml
