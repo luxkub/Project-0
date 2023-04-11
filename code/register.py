@@ -25,12 +25,17 @@ class Register:
             print("Total Cost: ", finsum, "\n")
 
             res2 = input("Do you have any instore credit? Please enter y or n.")
+            print("\n")
             if res2 == 'y' or res2 == 'Y':
                 res3 = input("Please enter your phone number.")
+                print("\n")
             else:
                 res4 = input("How would you like to pay? We accept Credit, Debit, and Paypal.")
+                print("\n")
                 if res4 == 'debit' or res4 == 'Debit':
                     res5 = input("Please enter your 4 digit pin")
+                    print("\n")
+                    print("Your purchase was successful\n")
                     print("Thank you for shopping with us at ITSCmart")
 
                 
