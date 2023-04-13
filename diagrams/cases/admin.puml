@@ -1,0 +1,24 @@
+@startuml Admin
+left to right direction
+actor Admin
+rectangle "System" as system {
+  (Login)
+  (View Inventory)
+  (View Items)
+  (View All Orders)
+  (View Profile)
+  (Add Item)
+  (Remove Item)
+  (Update Item Stock)
+  (Logout)
+}
+Admin --> (Login)
+Admin --> (View Cart)
+Admin --> (View Items)
+Admin --> (View All Orders)
+Admin --> (View Profile)
+Admin --> (Add Item)
+Admin --> (Remove Item)
+Admin --> (Update Item Stock)
+Admin --> (Logout)
+@enduml
