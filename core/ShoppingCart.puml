@@ -1,0 +1,14 @@
+@startuml Customer
+left to right direction
+actor Customer
+rectangle "System" as system {
+  (Create copy of inventory item)
+  (Add item to cart)
+  (Remove item from cart)
+  (Create list of items in cart)
+}
+Customer --> (Create copy of inventory item)
+Customer --> (Add item to cart)
+Customer --> (Remove item from cart)
+Customer --> (Create list of items in cart)
+@enduml
