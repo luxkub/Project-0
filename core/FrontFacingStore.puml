@@ -1,0 +1,18 @@
+@startuml customer
+left to right direction
+actor Customer
+rectangle "System" as system {
+  (Display inventory)
+  (Enable search function of site)
+  (View Cart)
+  (Checkout)
+  (Search)
+  (View More Details)
+  (View All Items)
+  (View Orders)
+  (View Profile)
+  (Logout)
+}
+Customer --> (Display inventory)
+Customer --> (Enable search function of site)
+@enduml
