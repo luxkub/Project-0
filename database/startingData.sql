@@ -28,6 +28,24 @@ VALUES ('Prey', 'Prey is a first-person shooter with role-playing and stealth el
 INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
 VALUES ('Risk of Rain 2', 'Escape a chaotic alien planet by fighting through hordes of frenzied monsters; with your friends, or on your own.', 16.00, 30, 'static\images\Risk_of_Rain_cover.jpg', 'Videogame');
 
+INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
+VALUES ('Age of Wonders 4', 'Control a fantastical world that you created! Discover new mystical lands using the unique 4X tactics and tactical turn-based combat in Age of Wonders. Manage a faction that develops and transforms as your kingdom grows at a constant rate!', 16.00, 30, 'static\images\age_of_wonders.jpg', 'Videogame');
+
+INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
+VALUES ('Total War: Warhammer III', 'Here is the devastating climax to the Total War: WARHAMMER trilogy. Gather your troops and enter the mind-bendingly terrifying Realm of Chaos, where the future of the entire universe will be decided.', 59.99, 30, 'static\images\warhammer.jpg', 'Videogame');
+
+INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
+VALUES ('Resident Evil 4', "Just getting by is only the beginning. The Raccoon City biological calamity occurred six years ago. One of the survivors, Leon S. Kennedy, follows the president's kidnapped daughter to a remote European village where there is a terrible problem with the inhabitants.", 59.99, 30, 'static\images\resident_evil.jpg', 'Videogame');
+
+INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
+VALUES ('Red Dead Redemption 2', 'The epic story of outlaw Arthur Morgan and the notorious Van der Linde gang, who were fleeing across America at the beginning of the modern era, is told in RDR2.', 59.99, 30, 'static\images\RDR2.jpg', 'Videogame');
+
+INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
+VALUES ('MONSTER HUNTER RISE', 'In an entirely new plot, you can take on the role of a hunter, discover fresh locations, and utilize a range of weaponry to defeat terrifying beasts.', 29.99, 30, 'static\images\monster_hunter.jpg', 'Videogame');
+
+INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
+VALUES ('Dying Light', 'Explore a city that has been wiped out by a strange virus outbreak. Gather items from trash, make weapons, and battle hordes of the diseased.', 9.99, 30, 'static\images\dying_light.jpg', 'Videogame');
+
 INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
 VALUES ('1', 'aturing', '1', 10, '2022-12-21 7:30:30', 5.50);
 
