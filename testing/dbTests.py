@@ -86,3 +86,45 @@ def test_check_connection_threaded(db: Database = None) -> tuple:
         return False, error
     else:
         return True, "Connection is not single threaded."
+
+def test_item_exists(db: Database = None) -> tuple:
+    """
+    Tests that the inventory's first item is correct.
+
+    args:
+        - db: an sqlite3 database object (optional)
+        - itemID: Key for identifying an item in the database.
+
+    returns:
+        - error_report: a tuple containing a boolean and a string, 
+          where the boolean is True if the test passed and False if it failed, 
+          and the string is the error report.
+    """
+
+    db = Database("database/storeRecords.db") if db is None else db
+    full_inventory = db.get_item_name_by_id(0)
+
+    if full_inventory == 'God of War; Ragnarok':
+        return True, "Items were properly uploaded into the database."
+    else:
+        return False, "Items were not uploaded properly."
+
+def all_items_uploaded(db: Database = None) -> tuple:
+    """
+    Tests that the inventory was fully uploaded.
+
+    args:
+        - db: an sqlite3 database object (optional)
+
+    returns:
+        - error_report: a tuple containing a boolean and a string, 
+          where the boolean is True if the test passed and False if it failed, 
+          and the string is the error report.
+    """
+    db = Database("database/storeRecords.db") if db is None else db
+    full_inventory = db.get_full_inventory()
+
+    if len(full_inventory) == 12:
+        return True, "Inventory is fully uploaded."
+    else:
+        return False, "Inventory is missing."

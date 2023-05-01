@@ -1,5 +1,6 @@
 from hashlib import sha512
 import os
+import random
 
 
 def hash_password(password: str, salt: str = None) -> tuple:
@@ -15,6 +16,7 @@ def hash_password(password: str, salt: str = None) -> tuple:
     encoded_password = password.encode()
     if salt is None:
         salt = os.urandom(16).hex()
+        # value was 16.
     key = sha512(encoded_password + salt.encode()).hexdigest()
     return (salt, key)
 
@@ -34,6 +36,7 @@ def username_exists(username: str) -> bool:
         lines = file.readlines()
     for line in lines:
         if line.split(":")[0] == username:
+            
             return True
     return False
 
