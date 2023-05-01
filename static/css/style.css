@@ -141,15 +141,6 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-  position: absolute;
-  top: 8px;
-  right: 300px;
-}
-
 .searchTerm {
   width: 100%;
   border: 3px solid #00B4CC;
