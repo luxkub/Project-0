@@ -121,3 +121,17 @@ def test_get_session_db() -> tuple:
         return False, error
     else:
         return True, "Session's database is correct."
+        
+def test_checkout() -> tuple:
+
+	"""
+	Tests that a session has a checkout button on the last page
+	args:
+		-None
+	
+	returns:
+		-error_report: A tuple containing a boolean and a description of the reason 			for the boolean
+		
+	"""
+	
+	
