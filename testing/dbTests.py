@@ -124,7 +124,7 @@ def all_items_uploaded(db: Database = None) -> tuple:
     db = Database("database/storeRecords.db") if db is None else db
     full_inventory = db.get_full_inventory()
 
-    if len(full_inventory) == 6:
+    if len(full_inventory) == 12:
         return True, "Inventory is fully uploaded."
     else:
         return False, "Inventory is missing."
