@@ -168,7 +168,7 @@ def payment():
     modifies:
         - None
     """
-
+    
     card_num = re.sub('[^0-9]','',request.form['card number'])
     exp_date = re.sub('[^0-9]','',request.form['exp date'])
     

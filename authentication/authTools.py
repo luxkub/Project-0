@@ -15,7 +15,7 @@ def hash_password(password: str, salt: str = None) -> tuple:
     """
     encoded_password = password.encode()
     if salt is None:
-        salt = os.urandom(random.randint(16, 32)).hex()
+        salt = os.urandom(16).hex()
         # value was 16.
     key = sha512(encoded_password + salt.encode()).hexdigest()
     return (salt, key)

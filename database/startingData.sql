@@ -32,7 +32,7 @@ INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `ca
 VALUES ('Age of Wonders 4', 'Control a fantastical world that you created! Discover new mystical lands using the unique 4X tactics and tactical turn-based combat in Age of Wonders.', 16.00, 30, 'static\images\age_of_wonders.jpg', 'Videogame');
 
 INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
-VALUES ('Gather your troops and enter the mind-bendingly terrifying Realm of Chaos, where the future of the entire universe will be decided.', 59.99, 30, 'static\images\warhammer.jpg', 'Videogame');
+VALUES ('Total War Warhammer', 'Gather your troops and enter the mind-bendingly terrifying Realm of Chaos, where the future of the entire universe will be decided.', 59.99, 30, 'static\images\warhammer.jpg', 'Videogame');
 
 INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
 VALUES ('Resident Evil 4', "Just getting by is only the beginning. ", 59.99, 30, 'static\images\resident_evil.jpg', 'Videogame');
