@@ -16,6 +16,19 @@ sessions = Sessions()
 sessions.add_new_session(username, db)
 order = {}
 
+@app.route('/search', methods=['POST'])
+def perform_search():
+    search_query = request.form['search']
+    search_results = [] # Implement your search functionality here
+    return render_template('results.html', results=search_results)
+
+@app.route('/search')
+def search():
+    query = request.args.get('search')
+    # Perform search logic on your data store
+    results = perform_search(query)
+    return render_template('results.html', results=results)
+
 @app.route('/')
 def index_page():
     """
@@ -159,7 +172,7 @@ def payment():
     """
     Renders the Payment page when the user is at the 'payment' endpoint with a post request
 
-    args:
+ v    args:
         - None
     
     returns:
