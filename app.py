@@ -19,7 +19,7 @@ order = {}
 @app.route('/search', methods=['POST'])
 def perform_search():
     search_query = request.form['search']
-    search_results = [] # Implement your search functionality here
+    search_results = db.execute("SELECT * FROM inventory WHERE item_name LIKE :query", {"query": f"%{query}%"}).fetchall()
     return render_template('results.html', results=search_results)
 
 @app.route('/search')
