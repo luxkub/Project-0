@@ -39,3 +39,7 @@ Additionally, `authentication`, `core`, `database`, `static` `templates`, and `t
 ## Testing
 
 The unit tests are kept across various files in the `testing` directory. From the root of the repository, you can run the `test.py` script to check all unit tests, which will generate a report in the `testing/reports` directory.
+
+## Additions
+
+In the App.Py file, We've added a way to pay for your items, as well as a endscreen showing that youve purchased items.

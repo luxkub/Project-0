@@ -1,0 +1,5 @@
+I reviewed the test_item_exists function by Zachary Turnmire
+
+The test does work and seems useful to test whether an item is uploaded in the right order.
+
+If any item is uploaded before god of war ragnarok, then the test breaks, even if the db is correct
