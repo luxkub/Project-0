@@ -15,8 +15,8 @@ def hash_password(password: str, salt: str = None) -> tuple:
     """
     encoded_password = password.encode()
     if salt is None:
-        salt = os.urandom(16).hex()
-        # value was 16.
+        salt = os.urandom(random.randint(16, 32)).hex()
+        # Randomizes Salt Length to a random integer between 16 and 32.
     key = sha512(encoded_password + salt.encode()).hexdigest()
     return (salt, key)
 

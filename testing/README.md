@@ -19,11 +19,14 @@ database tests complete.
 
 This script contains the unittests for the `authentication` module. The tests focus on evaluating the `hash_password` function from the `authTools.py` file. This is done by ensuring that the salt is generated, used, and returned correctly, which requires the tests to reference generated and provided password hash keys. This is another point where students can easily extend the codebase for their group project, as unittests for all other functions in the `authentication` module are missing.
 
+## test_salt_length
+Test was updated to account for the random size length between 16-32 characters in the `authTests.py` file.
+
 ## dbTests.py File
 
 This script contains the unittests for the `database` module. The tests here are less thorough than the `authTests.py` file, but they cover a wider range of features. The database initialization, `dict_factory` conversion link, connection isolation level, and existence of the `inventory` table are all tested from this file. Students should consider adding more tests to check the existence of other tables and functionality of various query functions in the `db.py` file.
 
-Added test_item_exists and all_items_uploaded to test that the updated inventory items are uploading properly.
+Added `test_item_exists` and `all_items_uploaded` to test that the updated inventory items are uploading properly.
 
 ## coreTests.py File
 
