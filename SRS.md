@@ -14,6 +14,7 @@
 |1.0| 03/30/23 | Initial draft | [Mack Larson](mailto:clarson9@uncc.edu) | [Mack Larson](mailto:clarson9@uncc.edu) |
 | 1.0 | 03/22/23 | Initial draft | [Winnie Kubuanu](mailto:ekubuanu@uncc.edu) | [Winnie Kubuanu](mailto:ekubuanu@uncc.edu) |
 | 1.0 | 03/30/23 | Initial draft | [Zachary Turnmire](mailto:zturnmir.uncc.edu) | [Zachary Turnmire](mailto:zturnmir.uncc.edu) |
+| 2.0 | 05/09/23 | Updating for Final Submission | [Zachary Turnmire](mailto:zturnmir.uncc.edu) | [Zachary Turnmire](mailto:zturnmir.uncc.edu) |
 
 ## Table of Contents
 
@@ -26,7 +27,10 @@
 
 ## Introduction
 
-Our project is a videogame store where users will be able to shop through a listed inventory that states the quanity and price of available videogames. The customer will able to view the quantity and price of all items available and will be able to shop for multiple items at a time. When the inventory of an item hits 0, staff of the store will be able to remove the object from inventory. Customers will be able to checkout using their card information. 
+Our project is a videogame store where users will be able to shop through a listed inventory that states the quantity and price of available videogames. The customer will able to view the quantity and price of all items available and will be able to shop for multiple items at a time as well as search for individual items. Upon checking out the customer will receive a receipt that lists all items purchased by the customer and will allow the customer to check out using their credit card information.
+
+# Did not implement.
+When the inventory of an item hits 0, staff of the store will be able to remove the object from inventory. Customers will be able to checkout using their card information. 
 
 ## Requirements
 

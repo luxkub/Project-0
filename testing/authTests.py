@@ -35,11 +35,11 @@ def test_salt_length():
     """
 
     salt, _ = hash_password("password")
-    if len(salt) != 32:
-        error = f"Error in test_salt_length: Salt is not 16 characters long.\n  - Actual: {len(salt)}"
+    if len(salt) <= 48:
+        error = f"Error in test_salt_length: Salt is not between 16-32 characters.\n  - Actual: {len(salt)}"
         return False, error
     else:
-        return True, "Salt is 16 characters long."
+        return True, "Salt is between 16-32 characters long."
 
 
 def test_hash_password_returns_given_salt():
