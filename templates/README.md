@@ -25,3 +25,12 @@ This file contains the html for the login page. This uses html forms to collect 
 ## register.html File
 
 The `register.html` file contains the html for the registration page. Similar to the `login.html` file, this uses html forms to collect the registration information from the user, and then passes that information to the `register()` method in the `app.py` file. Additional functionality, such as a "terms of service" link or a "privacy policy" link could be added here and may be a good avenue for some creativity.
+
+## payment.html File
+
+The `payment.html` file contains the html for the payment page. Similar to the `login.html` file, this page collects user data using html forms.
+
+
+## finish.html File
+
+The `finish.html' file contains the html for the finished page. It displays text for the user telling them about their items and payment.
