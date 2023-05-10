@@ -1,5 +1,51 @@
 from core.session import Sessions, UserSession
 from database.db import Database
+import app
+
+def test_perform_search() -> tuple:
+    """
+    Tests that the Sessions class is initialized correctly.
+
+     args:
+        - None
+
+    returns:
+        - error_report: a tuple containing a boolean and a string, 
+          where the boolean is True if the test passed and False if it failed, 
+          and the string is the error report.
+    """
+    db = Database("database/storeRecords.db")
+    query = "apple"
+    search_results = app.perform_search(query, db)
+    expected_results = db.execute("SELECT * FROM inventory WHERE item_name LIKE :query", {"query": f"%{query}%"}).fetchall()
+
+    if search_results != expected_results:
+        error = f"Error in test_perform_search: Search results are not as expected.\n  - Query: {query}\n  - Expected: {expected_results}\n  - Actual: {search_results}"
+        return False, error
+    else:
+        return True, "Search results are as expected."
+
+def test_search() -> tuple:
+    """
+    Tests that the Sessions class is initialized correctly.
+
+     args:
+        - None
+
+    returns:
+        - error_report: a tuple containing a boolean and a string, 
+          where the boolean is True if the test passed and False if it failed, 
+          and the string is the error report.
+    """
+    query = "apple"
+    search_results = app.search(query)
+    expected_results = app.perform_search(query, app.db)
+
+    if search_results != expected_results:
+        error = f"Error in test_search: Search results are not as expected.\n  - Query: {query}\n  - Expected: {expected_results}\n  - Actual: {search_results}"
+        return False, error
+    else:
+        return True, "Search results are as expected."
 
 
 def test_init_sessions() -> tuple:
@@ -130,8 +176,17 @@ def test_checkout() -> tuple:
 		-None
 	
 	returns:
-		-error_report: A tuple containing a boolean and a description of the reason 			for the boolean
-		
+		-error_report: A tuple containing a boolean and a description of the reason for the boolean
 	"""
-	
-	
+        # Create a new session and add items to the cart
+# Check out an item with sufficient inventory
+    result = self.inventory.checkout("item_1", 3)
+    self.assertEqual(result, (True, "Checkout successful"))
+
+    # Check out an item with insufficient inventory
+    result = self.inventory.checkout("item_1", 8)
+    self.assertEqual(result, (False, "Insufficient inventory"))
+    
+    # Check out an item that does not exist in the inventory
+    result = self.inventory.checkout("item_4", 2)
+    self.assertEqual(result, (False, "Item not found"))
